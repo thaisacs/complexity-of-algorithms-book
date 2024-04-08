@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 
 def intercala(x, p, m, q):
     a = []

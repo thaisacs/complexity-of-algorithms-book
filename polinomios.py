@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 def calc_polinomios(a, x):
     print(a)

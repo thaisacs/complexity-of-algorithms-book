@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 def selection_sort(x):
     for i in range(0, len(x)-1):

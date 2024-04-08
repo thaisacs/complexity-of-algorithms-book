@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 def heap_max(A, n):
     return A[0]
