@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import math
+
 def heap_max(A, n):
     return A[0]
 
@@ -11,14 +13,13 @@ def heap_extract_max(A, n):
 
 def heap_increase_key(A, i, chave):
     A[i] = chave
-    k = int(i/2)
+    k = math.floor(i/2)
     while(k >= 0 and A[k] < A[i]):
         buff = A[i]
         A[i] = A[k]
         A[k] = buff
         i = k
         k = int(i/2)
-
 
 def max_heap_insert(A, n, chave):
     A.append(-1)
