@@ -8,18 +8,22 @@ def heap_max(A, n):
 def heap_extract_max(A, n):
     A_l = A[0:n-1]
     A_l[0] = A[n-1]
+    print(A_l)
     max_heapify(A_l, n-1, 0)
     return A_l
+    print(A_l)
 
 def heap_increase_key(A, i, chave):
     A[i] = chave
-    k = math.floor(i/2)
+    j = math.floor((i + 1)/2)
+    k = j - 1
     while(k >= 0 and A[k] < A[i]):
         buff = A[i]
         A[i] = A[k]
         A[k] = buff
         i = k
-        k = int(i/2)
+        j = math.floor((i + 1)/2)
+        k = j - 1
 
 def max_heap_insert(A, n, chave):
     A.append(-1)
@@ -52,10 +56,12 @@ def heap_sort(A, n):
         max_heapify(A, i-1, 0)
 
 def main():
-    x = [6, 5, 4, 3, 10, 11, 12]
-    print(x)
+    x = [51, 38, 12, 20, 27, 11, 1, 10, 3, 6, 15, 2]
     build_max_heap(x, len(x))
-    max_heap_insert(x, len(x), 100)
+    print(x)
+    heap_increase_key(x, 10, 40)
+    print(x)
+    x = heap_extract_max(x, len(x))
     print(x)
 
 if __name__ == "__main__":
