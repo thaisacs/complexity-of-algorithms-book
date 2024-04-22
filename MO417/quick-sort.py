@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+import sys
+sys.setrecursionlimit(1500000)
+print(sys.getrecursionlimit())
 
 import numpy as np
 import random
@@ -40,15 +43,15 @@ def quick_sort_random(A, p, r):
         quick_sort(A, q + 1, r)
 
 def main():
-    B = np.random.randint(100000, size=1000000)
-    A = np.copy(B)
+    A = np.random.randint(100000, size=10000)
     print("unsorted:", A)
+    quick_sort(A, 0, len(A)-1)
+    print("  sorted:", A)
     start = time.time()
     quick_sort(A, 0, len(A)-1)
     end = time.time()
     print("  sorted:", A)
     print(end - start)
-    A = np.copy(B)
     start = time.time()
     quick_sort_random(A, 0, len(A)-1)
     end = time.time()
