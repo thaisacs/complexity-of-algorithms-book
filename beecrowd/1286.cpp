@@ -11,6 +11,21 @@ void print_vector(std::vector<order> orders) {
   }
 }
 
+void recover(std::vector<std::vector<int>> memo, std::vector<order> orders, int n, int m) {
+  int i = n;
+  int j = m;   
+  while(n > 0) {
+    int item = n - 1;
+    if(memo[n][m] != memo[n-1][m]) {
+      std::cout << n << std::endl;
+      m = m - orders[item].amount;
+      n = n - 1;
+    }else {
+      n = n - 1;
+    }
+  }
+}
+
 void solve(std::vector<order> orders, int P) {
   int n = orders.size();
   int m = P;
@@ -39,6 +54,7 @@ void solve(std::vector<order> orders, int P) {
       }
     }
   }
+  //recover(memo, orders, n, m);
   //for(int i = 0; i <= n; i++) {
   //  for(int j = 0; j <= m; j++) {
   //    std::cout << memo[i][j] << " ";
@@ -50,11 +66,11 @@ void solve(std::vector<order> orders, int P) {
 
 int main() {
   int P, N;
-  std::vector<order> orders;
    
   std::cin >> N >> P;
 
   do{
+    std::vector<order> orders;
     while(N) {
       order new_order;
       std::cin >> new_order.time;
