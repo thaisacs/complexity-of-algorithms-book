@@ -8,7 +8,7 @@ memo = np.zeros(len(nums), int)
 
 def maximum_subarray(nums, n):
     memo[0] = nums[0]
-    for x in range(1, n+1): 
+    for x in range(1, n): 
         if(nums[x] + memo[x-1] > nums[x]):
             memo[x] = nums[x] + memo[x-1]
         else:
@@ -17,11 +17,10 @@ def maximum_subarray(nums, n):
     for x in range(1, n): 
         if(memo[x] > m):
             m = memo[x]
-    print(memo)
     return m
 
 def main():
-    m = maximum_subarray(nums, len(nums)-1)
+    m = maximum_subarray(nums, len(nums))
     print(m)
 
 if __name__ == "__main__":
