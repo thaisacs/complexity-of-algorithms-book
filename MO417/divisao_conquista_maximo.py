@@ -22,7 +22,6 @@ def find_max(x, i, j):
             return find_max(x, i, left)
         elif(x[right] == x[q]):
             return find_max(x, i, left)
-
     return x
 
 def main():

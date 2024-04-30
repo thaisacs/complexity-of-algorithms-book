@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-p = [7,6,4,3,1]
-
 def pascals(n):
     triangle = [[1], [1, 1]]
     if(n == 1):

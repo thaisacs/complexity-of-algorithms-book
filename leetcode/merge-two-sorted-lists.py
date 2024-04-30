@@ -5,7 +5,6 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 def merge(list1, list2):
     buff = []
 
@@ -45,14 +44,6 @@ def main():
     for i in list_two:
         list2 = ListNode(i, list2)
         
-    #while(list1 != None):
-    #    print(list1.val)
-    #    list1 = list1.next
-
-    #while(list2 != None):
-    #    print(list2.val)
-    #    list2 = list2.next
-
     result = merge(list1, list2)
 
 if __name__ == "__main__":
