@@ -7,6 +7,9 @@ def fish_stops(F, m, t):
         if(F[i] - last <= m and F[i+1] - last > m):
             solution.append(F[i])
             last = F[i]
+    if(t - last > m):
+        print("No solution!")
+        return None
     solution.append(t)
     return solution
 
