@@ -47,7 +47,7 @@ int solver(node *tasks, int N) {
   int t = tasks[0].d;
   for(int i = 0; i < N; i++) {
     if(t < tasks[i].d) {
-      t = (tasks[i].d - t - 1) + t + tasks[i].p;
+      t = tasks[i].d + tasks[i].p;
     }else {
       t += tasks[i].p;
     }
@@ -70,7 +70,7 @@ int main() {
       tasks[i].p = p;
     }
 
-    quick_sort(tasks, 0, N-1, 1);
+    //quick_sort(tasks, 0, N-1, 1);
     quick_sort(tasks, 0, N-1, 0);
 
     std::cout << solver(tasks, N) << std::endl;
